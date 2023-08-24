@@ -1,12 +1,21 @@
 import { StatisticsListEL } from "components/StatisticsList/StatisticsList"
-import data from '../data.json'
 import { Title, Wrapper } from "./Statistics.styled"
-
-export const StatisticsEl = () => {
+import PropTypes from "prop-types";
+export const StatisticsEl = ({title, stats })=> {
     return (
-        <Wrapper title="Upload stats" stats={data} >
-  <Title>Upload stats</Title>
-<StatisticsListEL data={data}/>
+  <Wrapper>
+ {title && <Title>{title}</Title>}
+<StatisticsListEL data={stats}/>
   </Wrapper>
     )
 }
+StatisticsEl.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};

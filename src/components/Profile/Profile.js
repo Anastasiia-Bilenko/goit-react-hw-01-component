@@ -1,5 +1,5 @@
 import { DescriptionEl } from "components/Description/Description"
-import userinfo from "../user.json"
+import userinfo from "../../data/user.json"
 import { ListStarsEl } from "components/ListStars/ListStars"
 import { Wrapper } from "./Profile.styled"
 import PropTypes from "prop-types";

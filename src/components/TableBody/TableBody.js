@@ -1,6 +1,6 @@
 import { TableBodyDataEl } from "components/TableBodyData/TableBodyData"
 import { TableBodyElStyled } from "./TableBody.styled"
-
+import PropTypes from "prop-types";
 
 export const  TableBodyEl = ({items}) =>{
     return(
@@ -12,4 +12,9 @@ export const  TableBodyEl = ({items}) =>{
             ))}
         </TableBodyElStyled>
     )
+}
+
+
+TableBodyEl.propTypes = {
+    items : PropTypes.array.isRequired
 }
